@@ -9,8 +9,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.theme.css">
     <script src="js/jquery.js"></script>
     <script src="js/jquery-mask-plugin.js"></script>
+    <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+
     <script src="js/script.js"></script>
     <title>Star Foods Restaurant</title>
 </head>
@@ -22,8 +27,8 @@
                 <ul id="main-navegation">
                     <li><a href="#apresentation">Home</a></li>
                     <li><a href="#section-aboutus">About</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact-us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#section-form">Contact-us</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,12 +36,14 @@
             <p id="main-text-apresentation">Star Foods</p>
         </div>
         <div class="row">
-                <div id="main-buttons">
-                        <a href="#section-platesOfToday" class="btn btn-full">Plates of the day</a>
-                        
-        
-                        <a href="#" class="btn  btn-ghost">Where we are</a>
-                    </div>
+                <ul id="main-buttons">
+                    <li>
+                        <a href="#section-platesOfToday" class="btn btn-full" >Plates of the day</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-ghost">Where we are</a>
+                    </li>
+                </div>
         </div>
 
     </header>
@@ -421,10 +428,10 @@
             </div>
             <div class="col colFooter">
                     <ul class="social-links">
-                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                            <li><a href="#" title="facebook" ><i class="ion-social-facebook icons" ></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter icons" title="twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus icons" title="googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram icons" title="instagram"></i></a></li>
                     </ul>
             </div>
             
@@ -447,6 +454,23 @@
         });
         var $cellphone = $("#cellphone");
         $cellphone.mask('(00) 0 0000-0000',{reverse:false});
+
+        //Tooltip part
+        $(".icons").tooltip({
+            position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+        });
+        
     });
 </script>
 </html>
